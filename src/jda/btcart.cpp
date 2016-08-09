@@ -1,7 +1,7 @@
 #include <cstdio>
 #include <cstdlib>
 #include <liblinear/linear.h>
-#include <opencv2/imgproc/imgproc.hpp>
+#include "opencv2/imgproc/imgproc.hpp"
 #include "jda/data.hpp"
 #include "jda/cart.hpp"
 #include "jda/common.hpp"

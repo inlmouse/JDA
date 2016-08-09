@@ -5,7 +5,7 @@
 #include <cstdarg>
 #include <opencv2/imgproc/imgproc.hpp>
 #include <opencv2/highgui/highgui.hpp>
-#include <jsmn.hpp>
+#include <jsmnpp/jsmn.hpp>
 #include "jda/common.hpp"
 
 using namespace cv;

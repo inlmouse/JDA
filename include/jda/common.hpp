@@ -5,7 +5,7 @@
 #include <opencv2/core/core.hpp>
 
 // system
-#ifdef WIN32
+#ifdef WIN64
 #define NOMINMAX
 #include <io.h>
 #include <direct.h>
@@ -14,11 +14,18 @@
 #define MKDIR(path) mkdir(path)
 #define SLEEP(ms) Sleep(ms)
 #else
-#include <unistd.h>
-#include <sys/stat.h>
+//#include <unistd.h>
+//#include <sys/stat.h>
+//#define EXISTS(path) (access(path, 0)!=-1)
+//#define MKDIR(path) mkdir(path, 0775)
+//#define SLEEP(ms) usleep(ms)
+#define NOMINMAX
+#include <io.h>
+#include <direct.h>
+#include <Windows.h>
 #define EXISTS(path) (access(path, 0)!=-1)
-#define MKDIR(path) mkdir(path, 0775)
-#define SLEEP(ms) usleep(ms)
+#define MKDIR(path) mkdir(path)
+#define SLEEP(ms) Sleep(ms)
 #endif
 
 /*!

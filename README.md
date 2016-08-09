@@ -5,32 +5,29 @@ C++ implementation of Joint Cascade Face Detection and Alignment.
 
 ### Fetech Code
 
+This is a modified version of [luoyetx-JDA](https://github.com/luoyetx/JDA).
+
 I recommend using [Git](https://git-scm.com/) to fetch the source code. If you are not familiar with Git, there is a [tutorial](https://git-scm.com/book/en/v2) you can follow.
 
 ```
-$ git clone --recursive https://github.com/luoyetx/JDA.git
+$ git clone --recursive https://github.com/inlmouse/JDA.git
 ```
 
 OR
 
 ```
-$ git clone https://github.com/luoyetx/JDA.git
+$ git clone https://github.com/inlmouse/JDA.git
 $ cd JDA
 $ git submodule update --init
 ```
 
-If you directly download the zip file, please remember to download [luoyetx/liblinear][luoyetx/liblinear] and [luoyetx/jsmnpp][luoyetx/jsmnpp], then extract the source code to `3rdparty`. liblinear is used for global regression training and jsmnpp is used for json config parsing.
+~~If you directly download the zip file, please remember to download [luoyetx/liblinear][luoyetx/liblinear] and [luoyetx/jsmnpp][luoyetx/jsmnpp], then extract the source code to `3rdparty`.~~ liblinear is used for global regression training and jsmnpp is used for json config parsing.
+
+**liblinear** and **jsmnpp** have been added to `.\3rdparty`. And I add some (missing?) source code to *.\3rdparty\jsmnpp\jsmn.h* to ensure the project can be compiled correctly.
 
 ### Build
 
-We use [CMake][cmake] to build the project, I highly recommend you to use this build tool. We also need [OpenCV][opencv]. If you are on Windows, make sure you have set environment variable `OpenCV_DIR` to OpenCV's build directory like `D:/3rdparty/opencv2.4.11/build`. You may also need [Visual Studio][vs] to compile the source code. If you are on Linux or Unix, install the development packages of OpenCV via your system's Package Manager like `apt-get` on Ubuntu or `yum` on CentOS. However, Compile the source code of OpenCV will be the best choice of all.
-
-```
-$ cd JDA
-$ mkdir build && cd build
-$ cmake ..
-$ make
-```
+I add the Visual Studio 2013 solution file to this project and just config OpenCV before compile. 3.0 or later versions of OpenCV are allowed to be used in this project.
 
 ### Config
 
@@ -132,6 +129,8 @@ $ ./jda fddb
 ### Attention
 
 Welcome any bug report and any question or idea through the [issues](https://github.com/luoyetx/JDA/issues).
+
+I may rewrite some code into CUDA for acceleration. So you may need CUDA Toolkit 7.5 or later version in later version.
 
 ### QQ Group
 
